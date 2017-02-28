@@ -1,5 +1,5 @@
 # for demo only
-def get_train_test(data, split):
+def get_train_test(data, split=0.8):
     train_data_length = int(len(data)*split)
     print('number of observations in training data is: %d' % train_data_length)
     print('number of observations in testing data is: %d' % (len(data)-train_data_length))
