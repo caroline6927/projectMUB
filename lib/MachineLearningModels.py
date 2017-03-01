@@ -32,6 +32,10 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.tree import DecisionTreeClassifier
 
+
+##################
+# Model Building #
+##################
 class basicModel():
     def __init__(self, data, feature, target, model_method):
         self.data = data
@@ -83,6 +87,9 @@ class optimizedModel(basicModel):
         return best_model, best_features
 
 
+###############
+# Train Model #
+###############
 def get_model(data, feature, target, model_method, optimized=True):
     if optimized:
         model = optimizedModel(data, feature, target, model_method)
@@ -107,6 +114,9 @@ def get_selected_model(data, feature, target, model_method, optimized=True):
     return trained_model, train_features
 
 
+###################
+# Make Prediction #
+###################
 def get_prediction(data, model, target, feature):
     print(feature)
     x_predict = data[feature]
@@ -114,9 +124,15 @@ def get_prediction(data, model, target, feature):
     # data.loc[:, 'predicted'] = y_predicted
     accuracy = model.score(data[feature], data[target])
     print("prediction accuracy based on test data is %f " % accuracy)
+    # print("Mean squared error: %.2f"
+    #       % np.mean((model.predict(x_predict) - data[target]) ** 2))
+    # print('Variance score: %.2f' % model.score(x_predict, data[target]))
     return y_predicted, accuracy
 
 
+##################
+# Evaluate Model #
+##################
 def evaluate_model(accuracy):
     if accuracy >= .9:
         print('model adopted')
@@ -185,6 +201,3 @@ def evaluate_model(accuracy):
 # #         accuracy = tree.score(x, y)
 # #         print("accuracy based on training data is %f" % accuracy)
 # #         return tree, features_lst
-
-
-
