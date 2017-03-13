@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../fyp_server_py/.idea/fyp_server_py.iml" filepath="$PROJECT_DIR$/../fyp_server_py/.idea/fyp_server_py.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/projectMUB.iml" filepath="$PROJECT_DIR$/.idea/projectMUB.iml" />
     </modules>
   </component>
